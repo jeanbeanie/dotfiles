@@ -3,16 +3,20 @@ filetype off " Required
 
 set number
 set undofile
-set undodir="~/.vim/undo_history"
-set undolevels=90000 
+set undodir="~/.vim/undo_history/"
+set undolevels=50000 
 set history=1000
 set showcmd
 set showmode
-set visualbell
+
+"set visualbell
+set noerrorbells visualbell t_vb=
+" autocmd GUIEnter * set visualbell t_vb=
+
 set autoread
 syntax on
 set noswapfile
-colorscheme evening
+" colorscheme evening
 
 " Indentation
 set autoindent
@@ -39,16 +43,12 @@ Plugin 'VundleVim/Vundle.vim'  " Required
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'gizmo385/spotify.vim'
+" Plugin 'gizmo385/spotify.vim'
+" Plugin 'metakirby5/cod.vim'
 Plugin 'moll/vim-node'
 call vundle#end() 
 
 filetype plugin indent on " Required
-
-" Drop Syntastic settings at the end of the config file "
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_css_checkers=['stylelint']
@@ -69,3 +69,7 @@ highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
 highlight link SyntasticStyleWarningSign SignColumn
 
+" Drop Syntastic settings at the end of the config file "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
