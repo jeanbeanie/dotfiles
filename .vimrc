@@ -34,6 +34,7 @@ set sidescroll=1
 
 " Vim Airline Setting
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -43,13 +44,13 @@ Plugin 'VundleVim/Vundle.vim'  " Required
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'jelera/vim-javascript-syntax'
-" Plugin 'gizmo385/spotify.vim'
-" Plugin 'metakirby5/cod.vim'
+Plugin 'flowtype/vim-flow'
 Plugin 'moll/vim-node'
 call vundle#end() 
 
 filetype plugin indent on " Required
 
+"let g:flow#flowpath = '$(npm bin)/flow'
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_css_checkers=['stylelint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
