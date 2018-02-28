@@ -16,7 +16,7 @@ set noerrorbells visualbell t_vb=
 set autoread
 syntax on
 set noswapfile
-" colorscheme evening
+colorscheme industry
 
 " Indentation
 set autoindent
@@ -44,16 +44,14 @@ Plugin 'VundleVim/Vundle.vim'  " Required
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-airline/vim-airline'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'flowtype/vim-flow'
+Plugin 'mtscout6/syntastic-local-eslint.vim'
 Plugin 'moll/vim-node'
 call vundle#end() 
 
 filetype plugin indent on " Required
 
-"let g:flow#flowpath = '$(npm bin)/flow'
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_css_checkers=['stylelint']
-let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_loc_list_height = 5
